@@ -7,8 +7,8 @@ const app=express()
 const path = require('path');
 app.use(cors({origin:'*'}))
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
-const url='mongodb+srv://vinay:223344Vinay@cluster0.x1hoqsk.mongodb.net/?retryWrites=true&w=majority'
-mongoose.connect('mongodb://localhost:27017/employee',{
+const url='mongodb+srv://vinaybuttala:223344vinay@cluster0.qnujb1h.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
+mongoose.connect('url',{
     useNewUrlParser:true,
     useUnifiedTopology:true,
 }).then(()=>console.log('db connected'))
