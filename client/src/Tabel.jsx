@@ -12,7 +12,7 @@ const Tabel = () => {
     const fileInputRef = useRef(null); 
 
     async function getdata() {
-        const res = await axios.get('http://localhost:3000/employee');
+        const res = await axios.get('http://localhost:3001/employee');
         setdata(res.data);
     }
 
@@ -32,7 +32,7 @@ const Tabel = () => {
     };
 
     const delet = async (id) => {
-        const url = `http://localhost:3000/employee/${id}`;
+        const url = `http://localhost:3001/employee/${id}`;
         await axios.delete(url);
         getdata();
     };
@@ -53,7 +53,7 @@ const Tabel = () => {
         }
 
         try {
-            const updateurl = `http://localhost:3000/employee/${editid}`;
+            const updateurl = `http://localhost:3001/employee/${editid}`;
             await axios.put(updateurl, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
@@ -77,7 +77,7 @@ const Tabel = () => {
         }
 
         try {
-            const result = await axios.post('http://localhost:3000/upload', formData, {
+            const result = await axios.post('http://localhost:3001/upload', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
@@ -98,7 +98,7 @@ const Tabel = () => {
     };
 
     const reset = (e) => {
-        const currentFile=`http://localhost:3000/uploads/${tdata.file}`
+        const currentFile=`http://localhost:3001/uploads/${tdata.file}`
         e.preventDefault();
         document.getElementById('uname').value = currentEmployee.name || '';
         document.getElementById('uage').value = currentEmployee.age || '';

@@ -7,8 +7,8 @@ const app=express()
 const path = require('path');
 app.use(cors({origin:'*'}))
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
-const url='mongodb+srv://vinaybuttala:223344vinay@cluster0.qnujb1h.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
-mongoose.connect('url',{
+const url='mongodb+srv://vinaybuttala:223344Vinay@cluster0.qnujb1h.mongodb.net/?retryWrites=true&w=majority'
+mongoose.connect(url,{
     useNewUrlParser:true,
     useUnifiedTopology:true,
 }).then(()=>console.log('db connected'))
@@ -81,7 +81,7 @@ app.delete('/employee/:id',async(req,res)=>{
         console.log(err)
     }
 })
-const url1=process.env.port || 3000
+const url1=process.env.port || 3001
 app.listen(url1,()=>{
     console.log('listen');
 })
