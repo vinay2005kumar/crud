@@ -12,7 +12,7 @@ const Tabel = () => {
     const fileInputRef = useRef(null); 
 
     async function getdata() {
-        const res = await axios.get('http://localhost:3001/employee');
+        const res = await axios.get('https://crud-1-nl3o.onrender.com/employee');
         setdata(res.data);
     }
 
@@ -32,7 +32,7 @@ const Tabel = () => {
     };
 
     const delet = async (id) => {
-        const url = `http://localhost:3001/employee/${id}`;
+        const url = `https://crud-1-nl3o.onrender.com/employee/${id}`;
         await axios.delete(url);
         getdata();
     };
@@ -53,7 +53,7 @@ const Tabel = () => {
         }
 
         try {
-            const updateurl = `http://localhost:3001/employee/${editid}`;
+            const updateurl = `https://crud-1-nl3o.onrender.com/employee/${editid}`;
             await axios.put(updateurl, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
@@ -67,6 +67,7 @@ const Tabel = () => {
     };
 
     const add = async (e) => {
+        console.log('hi')
         e.preventDefault();
         const formData = new FormData();
         formData.append('name', document.getElementById('fname').value);
@@ -77,7 +78,7 @@ const Tabel = () => {
         }
 
         try {
-            const result = await axios.post('http://localhost:3001/upload', formData, {
+            const result = await axios.post('https://crud-1-nl3o.onrender.com/upload', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
@@ -98,7 +99,7 @@ const Tabel = () => {
     };
 
     const reset = (e) => {
-        const currentFile=`http://localhost:3001/uploads/${tdata.file}`
+        const currentFile=`https://crud-1-nl3o.onrender.com/uploads/${tdata.file}`
         e.preventDefault();
         document.getElementById('uname').value = currentEmployee.name || '';
         document.getElementById('uage').value = currentEmployee.age || '';

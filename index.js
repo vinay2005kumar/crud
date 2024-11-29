@@ -5,7 +5,11 @@ const cors=require('cors')
 const multer=require('multer')
 const app=express()
 const path = require('path');
-app.use(cors({origin:'*'}))
+app.use(cors({
+    origin: 'http://localhost:5174', // Allow your React app's origin
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify allowed methods
+    credentials: true // If you use cookies or authentication headers
+}));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 const url='mongodb+srv://vinaybuttala:223344Vinay@cluster0.qnujb1h.mongodb.net/?retryWrites=true&w=majority'
 mongoose.connect(url,{
