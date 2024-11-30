@@ -13,7 +13,9 @@ const Tabel = () => {
 
     async function getdata() {
         const res = await axios.get('https://crud-1-nl3o.onrender.com/employee');
+        console.log('result',res)
         setdata(res.data);
+        
     }
 
     useEffect(() => {
@@ -134,7 +136,9 @@ const Tabel = () => {
 
             <div className="tabel">
                 {!edit ? (
+                   
                     <table border='1px' width='800px' id='table'>
+                     {console.log(pdata)}
                         <thead>
                             <tr>
                                 <th>Name</th>
