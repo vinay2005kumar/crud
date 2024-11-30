@@ -153,7 +153,7 @@ const Tabel = () => {
                                         <td>
                                             {tdata.file ? (
                                                 <img
-                                                    src={`http://localhost:3000/uploads/${tdata.file}`}
+                                                    src={`https://crud-1-nl3o.onrender.com/uploads/${tdata.file}`}
                                                     alt={tdata.name}
                                                     width='50px'
                                                     height='50px'
