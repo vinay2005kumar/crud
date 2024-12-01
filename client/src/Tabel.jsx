@@ -12,7 +12,7 @@ const Tabel = () => {
     const fileInputRef = useRef(null); 
 
     async function getdata() {
-        const res = await axios.get('https://crud-1-nl3o.onrender.com/employee');
+        const res = await axios.get('https://crud-v6rt.onrender.com/emploee');
         console.log('result',res)
         setdata(res.data);
         

@@ -91,12 +91,23 @@ input{
     left: 200px;
 }
 #add{
-    width: 15em;
+    width: 10em;
     height: 3em;
     position: relative;
     left: -80em;
     cursor: pointer;
     top: 6em;
+    border: 1px solid rgb(66, 177, 220);
+    background-color: transparent;
+    color: blue;
+    font-weight: bold;
+    
+}
+#add:hover{
+  transition-duration: -2s;
+  background-color: skyblue;
+  color: white;
+  transform: scale(1.1,1.1);
 }
 #edit{
     color: red;
@@ -180,7 +191,7 @@ input{
     position: relative;
     left: 9em;
     height: 3em;
-    width: 4em;
+    width: 3em;
     top:0em;
    
   }
