@@ -99,7 +99,7 @@ app.delete('/employee/:id', async (req, res) => {
 });
 
 // Start Server
-app.listen('0.0.0.0:0000', () => {
-  console.log('Server running on http://localhost:10000');
+app.listen(PORT, () => {
+  console.log('Server running...');
 });
 
