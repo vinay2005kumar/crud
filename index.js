@@ -6,7 +6,7 @@ const path = require('path');
 const employee = require('./model');
 
 const app = express();
-const PORT = process.env.PORT || 3003;
+const PORT = process.env.PORT || 5003;
 
 // Middleware
 app.use(cors({
@@ -99,7 +99,7 @@ app.delete('/employee/:id', async (req, res) => {
 });
 
 // Start Server
-app.listen(10000, '0.0.0.0', () => {
+app.listen(PORT, () => {
   console.log('Server running on http://localhost:10000');
 });
 
