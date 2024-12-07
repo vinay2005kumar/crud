@@ -6,17 +6,17 @@ const path = require('path');
 const employee = require('./model');
 
 const app = express();
-const PORT = process.env.PORT || 5003;
+
 
 // Middleware
 app.use(cors({
     origin:'*', // Allow only this origin
     methods: "GET,POST,PUT,DELETE",
 }));
-app.use((req, res, next) => {
-    res.setHeader('Cross-Origin-Opener-Policy', 'same-origin');
-    res.setHeader('Cross-Origin-Embedder-Policy', 'require-corp');
-  });
+//app.use((req, res, next) => {
+//    res.setHeader('Cross-Origin-Opener-Policy', 'same-origin');
+//    res.setHeader('Cross-Origin-Embedder-Policy', 'require-corp');
+//  });
 app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
@@ -39,7 +39,9 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 // Routes
+
 app.get('/employee', async (req, res) => {
+    console.log("got request")
     try {
         const result = await employee.find({});
         res.json(result);
@@ -99,7 +101,7 @@ app.delete('/employee/:id', async (req, res) => {
 });
 
 // Start Server
-app.listen(PORT, () => {
-  console.log('Server running...');
+app.listen(3000, () => {
+  console.log('Server running on 3000...');
 });
 
