@@ -12,7 +12,7 @@ const Tabel = () => {
     const fileInputRef = useRef(null); 
 
     async function getdata() {
-        const res = await axios.get('https://crud-v6rt.onrender.com/emploee');
+        const res = await axios.get('https://crud-5-tlsv.onrender.com/employee');
         console.log('result',res)
         setdata(res.data);
         
@@ -34,7 +34,7 @@ const Tabel = () => {
     };
 
     const delet = async (id) => {
-        const url = `https://crud-1-nl3o.onrender.com/employee/${id}`;
+        const url = `https://crud-5-tlsv.onrender.com/employee/${id}`;
         await axios.delete(url);
         getdata();
     };
@@ -55,7 +55,7 @@ const Tabel = () => {
         }
 
         try {
-            const updateurl = `https://crud-1-nl3o.onrender.com/employee/${editid}`;
+            const updateurl = `https://crud-5-tlsv.onrender.com/employee${editid}`;
             await axios.put(updateurl, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
@@ -80,7 +80,7 @@ const Tabel = () => {
         }
 
         try {
-            const result = await axios.post('https://crud-1-nl3o.onrender.com/upload', formData, {
+            const result = await axios.post('https://crud-5-tlsv.onrender.com/upload', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
@@ -101,7 +101,7 @@ const Tabel = () => {
     };
 
     const reset = (e) => {
-        const currentFile=`https://crud-1-nl3o.onrender.com/uploads/${tdata.file}`
+        const currentFile=`https://crud-5-tlsv.onrender.com/uploads/${tdata.file}`
         e.preventDefault();
         document.getElementById('uname').value = currentEmployee.name || '';
         document.getElementById('uage').value = currentEmployee.age || '';
