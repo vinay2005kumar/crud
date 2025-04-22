@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import './Tabel.css';
 import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+
 
 const Tabel = () => {
     const [pdata, setdata] = useState([]);
@@ -13,7 +13,8 @@ const Tabel = () => {
     const [loading, setLoading] = useState(false);
     const [actionType, setActionType] = useState(''); // Track which operation is in progress
     const fileInputRef = useRef(null);
-
+    const url='https://crud-fc58.onrender.com'
+   // const url='http://localhost:3001'
     // Notify the user
     const notify = (message, type) => {
         if (type === 'success') {
@@ -30,7 +31,7 @@ const Tabel = () => {
     // Fetch data from the backend
     const getdata = async () => {
         try {
-            const res = await axios.get('http://localhost:3001/employee');
+            const res = await axios.get(`${url}/employee`);
             setdata(res.data);
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -59,7 +60,7 @@ const Tabel = () => {
             setLoading(true);
             setActionType('delete');
             try {
-                await axios.delete(`http://localhost:3001/employee/${id}`);
+                await axios.delete(`${url}/employee/${id}`);
                 getdata();
                 notify('Employee deleted successfully', 'success');
             } catch (error) {
@@ -92,7 +93,7 @@ const Tabel = () => {
         }
 
         try {
-            await axios.put(`http://localhost:3001/employee/${editid}`, formData, {
+            await axios.put(`${url}/${editid}`, formData, {
                 headers: { 'Content-Type': 'multipart/form-data' }
             });
             setedit(false);
@@ -122,7 +123,7 @@ const Tabel = () => {
         }
 
         try {
-            const result = await axios.post('http://localhost:3001/upload', formData);
+            const result = await axios.post(`${url}/upload`, formData);
             if (result.status === 201) {
                 getdata();
                 notify('Employee added successfully', 'success');
