@@ -5,6 +5,15 @@ body{
     height:100vh;
     overflow-x: hidden;
 }
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
 #container{
     width: 600px;
     height: 380px;
